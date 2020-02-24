@@ -1,0 +1,12 @@
+
+nav ul li{
+    display: inline ;
+}
+nav ul li a{
+    padding: 19px;
+    color: #ffffff;
+}
+
+.field_set{
+    border-color:red
+}
