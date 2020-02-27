@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shipping using JavaScript</title>
+    <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.4.1-dist/css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/ShippingJavaScript.js"></script>
+</head>
+<style>
+    h5{
+        color: darkred;
+    }
+    .footermargin{
+        background-color: blue;
+        color: white;
+    }
+</style>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <ul class="navbar-nav">
+        <span class="navbar-brand">My Clothing Store</span>
+        <li class="nav-item"><a href="index.html" class="navbar-brand">Home</a></li>
+        <li class="nav-item"><a href="submit.html" class="navbar-brand">Order</a></li>
+    </ul>
+</nav><br>
+
+<form class="container-sm" name="myForm" method="post">
+    <fieldset class="border p-3">
+
+        <div class="form-group">
+            <label for="size">Select size</label>
+            <select class="form-control form-control-sm" id="size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Larder</option>
+            </select>
+        </div>
+
+        <h5>Address</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Home Address
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Office Address
+            </label>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="item">No. of items</label>
+                <span id="itemerror"></span>
+                <input type="number" class="form-control" id="item" min=1 name="items">
+                </div>
+            <div class="form-group col-md-6">
+                <label for="arrivaldate">Must arrive by date</label>
+                <span id="dateerror"></span>
+                <input type="date" class="form-control" id="arrivaldate" name="date">
+
+            </div>
+        </div>
+
+        <h5>Home Address</h5>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="fname">First Name</label>
+                <span id="fnameerror"></span>
+                <input type="text" class="form-control" id="fname"  placeholder="First Name" name="firstname">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="lname">Last Name</label>
+                <span id="lnameerror"></span>
+                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="emailid">Email address</label>
+                <span id="emailiderror"></span>
+                <input type="email" class="form-control" id="emailid" placeholder="Email">
+            </div>
+        </div>
+
+        <h5>Extras</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Gift Wrap
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+                Include Catalog with order
+            </label>
+        </div><br>
+
+        <h5>Ship to</h5>
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <span id="fullnameerror"></span>
+            <input type="text" class="form-control" id="fullname">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="Address">Address</label>
+                <span id="addresserror"></span>
+                <input type="text" class="form-control" id="address" placeholder="Address">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="city">City</label>
+                <span id="cityerror"></span>
+                <input type="text" class="form-control" id="city" placeholder="City">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="state">State</label>
+                <span id="stateerror"></span>
+                <input type="text" class="form-control" id="state" placeholder="State">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="Zip">Zip</label>
+                <span id="ziperror"></span>
+                <input type="number" class="form-control" id="Zip" placeholder="Zip" min="0">
+            </div>
+        </div>
+        <label for="comment">Comment(optional):</label>
+        <textarea class="form-control" rows="3" id="comment"></textarea><br>
+
+<!--        <button type="submit" class="btn btn-danger">-->
+<!--        <a href="SuccessJavascript.html" method="post" target="_blank" >Submit</a>-->
+<!--        </button> Check the Shipping.html code-->
+
+<!--        <a class="btn btn-danger" href=SuccessJavascript.html" role="button"  target="_blank">Submit</a>-->
+
+        <button type="submit" class="btn btn-danger" onclick="return(validate())" value="send">Submit</button>
+    </fieldset>
+</form><br>
+
+<footer class="footermargin" align="middle">
+    Terms & Conditions
+</footer>
+
+</body>
+</html>
